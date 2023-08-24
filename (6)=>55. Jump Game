@@ -5,3 +5,9 @@ bool canJump(vector<int>& nums) {
         return ind==0;
     }
 -------------------------------------------------------------------------------------------------
+   bool canJump(vector<int>& nums) {
+        int maxReach=0;
+        for(int i=0;i<nums.size()-1;i++)if(maxReach>=i)maxReach=max(maxReach,nums[i]+i);
+        return maxReach>=nums.size()-1;
+}
+--------------------------------------------------------------------------------------------------
